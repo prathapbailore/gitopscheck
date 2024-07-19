@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkapp
+spec:
+  selector:
+    matchLabels:
+      app: checkapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: checkapp
+    spec:
+      containers:
+      - name: checkapp
+        image: chauhanhimani/todo-app:build-25
+        ports:
+        - containerPort: 80
